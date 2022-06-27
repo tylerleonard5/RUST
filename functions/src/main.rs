@@ -9,5 +9,3 @@ fn print_labeled_measurement(value: i32, unit_label: char) -> i32 {
 
     4 // can return like this in RUST
 }
-
-
