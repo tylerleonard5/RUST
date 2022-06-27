@@ -13,5 +13,9 @@ fn main() {
 
     let spaces = "   ";
     let spaces = spaces.len();
-    println!("The value of spaces is: {}", spaces)
+    println!("The value of spaces is: {}", spaces);
+
+    let guess: u32 = "42".parse().expect("Not a number!");
+
+    print!("{}", guess);
 }

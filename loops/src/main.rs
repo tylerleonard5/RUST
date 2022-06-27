@@ -1,6 +1,7 @@
 fn main() {
     let mut count = 0;
-    'counting_up: loop { // creates loop with label
+    'counting_up: loop {
+        // creates loop with label
         println!("count = {}", count);
         let mut remaining = 10;
 
@@ -10,7 +11,7 @@ fn main() {
                 break;
             }
             if count == 2 {
-                break 'counting_up;  // label of loop
+                break 'counting_up; // label of loop
             }
             remaining -= 1;
         }
@@ -18,7 +19,6 @@ fn main() {
         count += 1;
     }
     println!("End count = {}", count);
-
 
     let mut counter = 0;
 
@@ -32,11 +32,8 @@ fn main() {
 
     println!("The result is {}", result);
 
-
     for number in (1..4).rev() {
         println!("{}!", number);
     }
     println!("LIFTOFF!!!");
 }
-
-
