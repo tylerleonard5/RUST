@@ -8,5 +8,10 @@ fn main() {
 
     let (x, y, z) = tup;
 
+    println!("The value of x is: {}", x);
     println!("The value of y is: {}", y);
+
+    let spaces = "   ";
+    let spaces = spaces.len();
+    println!("The value of spaces is: {}", spaces)
 }
