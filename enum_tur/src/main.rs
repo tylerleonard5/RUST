@@ -12,6 +12,12 @@ enum Coin {
     Quarter(UsState),
 }
 
+fn main() {
+    let q_fl = Coin::Quarter(UsState::Alaska);
+
+    value_in_cents(q_fl);
+}
+
 fn value_in_cents(coin: Coin) -> u8 {
     match coin {
         Coin::Penny => 1,
@@ -22,10 +28,4 @@ fn value_in_cents(coin: Coin) -> u8 {
             25
         }
     }
-}
-
-fn main() {
-    let q_fl = Coin::Quarter(UsState::Alaska);
-
-    value_in_cents(q_fl);
 }
