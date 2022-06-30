@@ -33,7 +33,7 @@ fn median(vec_input: &mut Vec<i32>) -> MedType {
     vec_input.sort();
 
     if length_int % 2 == 0 {
-        return MedType::Float(((vec_input[length - 1] as f32) + (vec_input[length] as f32)) / 2.0);
+        return MedType::Float(((vec_input[length - 1]) + (vec_input[length])) as f32 / 2.0);
     } else {
         return MedType::Int(vec_input[length]);
     }
