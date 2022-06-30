@@ -1,4 +1,5 @@
-use std::io;
+use std::{io, vec};
+use std::collections::HashMap;
 
 enum MedType {
     Float(f32),
@@ -23,6 +24,29 @@ fn main() {
         MedType::Float(value) => println!("The median is: {}", value),
         MedType::Int(value) => println!("The median is: {}", value),
     }
+
+    let mode_vec = mode(&mut input_vec);
+
+    
+    let length = (mode_vec.len() - 1) as i32;
+
+    if length > 0 {
+        print!("The modes are: ");
+    }
+    else{
+        print!("The mode is: ");
+    }
+
+    let mut count = 0;
+    for i in mode_vec{
+        if count == length {
+            print!("{}", i)
+        } else{
+            print!("{} and ", i);
+            count += 1;
+        }
+    }
+
 }
 
 fn median(vec_input: &mut Vec<i32>) -> MedType {
@@ -38,3 +62,28 @@ fn median(vec_input: &mut Vec<i32>) -> MedType {
         return MedType::Int(vec_input[length]);
     }
 }
+
+fn mode(vec_input: &mut Vec<i32>) -> Vec<i32> {
+    let mut map = HashMap::new();
+
+    let mut modes: Vec<i32> = Vec::new();
+
+    for i in vec_input {
+        let count = map.entry(i).or_insert(0);
+        *count += 1;
+    }
+    let mut count = 0; 
+
+    for (key, value) in &map {
+        if value > &count {
+            let mut temp: Vec<i32> = Vec::new();
+            temp.push(**key);
+            modes = temp;
+            count = *value;
+        }else if value == &count {
+            modes.push(**key)
+        }
+    }
+
+    return modes;
+} 
