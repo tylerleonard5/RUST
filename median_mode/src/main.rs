@@ -6,7 +6,7 @@ enum MedType {
 }
 
 fn main() {
-    println!("Enter list of integers");
+    println!("Enter list of integers, separated by spaces");
 
     let mut input = String::new();
     io::stdin()
